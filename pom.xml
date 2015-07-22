@@ -6,7 +6,7 @@
 		<groupId>com.innoave.menura.link</groupId>
 		<artifactId>menura-link-parent</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../menura-link-parent</relativePath>
+		<relativePath>./menura-link-parent</relativePath>
 	</parent>
 	
 	<artifactId>menura-link-project</artifactId>
@@ -17,36 +17,11 @@
 	<inceptionYear>2014</inceptionYear>
 	<url>https://github.com/innoave/menura-link</url>
 	
-	<licenses>
-		<license>
-			<name>Apache License Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-	
-    <developers>
-    	<developer>
-    		<id>haraldmaida</id>
-    		<email>harald.maida@innoave.com</email>
-    		<url>https://github.com/haraldmaida</url>
-    		<organization>Innoave.com</organization>
-    		<roles>
-    			<role>founder</role>
-    			<role>leader</role>
-    			<role>architect</role>
-    			<role>developer</role>
-    			<role>tester</role>
-    		</roles>
-    		<timezone>+1</timezone>
-    	</developer>
-    </developers>
-	
 	<modules>
-		<module>../menura-link-api</module>
-		<module>../menura-link-core</module>
-		<module>../menura-link-jms</module>
-		<module>../menura-link</module>
+		<module>menura-link-api</module>
+		<module>menura-link-core</module>
+		<module>menura-link-jms</module>
+		<module>menura-link</module>
 	</modules>
 	
 	<dependencyManagement>

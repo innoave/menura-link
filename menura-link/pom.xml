@@ -6,7 +6,6 @@
 		<groupId>com.innoave.menura.link</groupId>
 		<artifactId>menura-link-project</artifactId>
 		<version>0.1.0-SNAPSHOT</version>
-		<relativePath>../menura-link-project</relativePath>
 	</parent>
   
 	<artifactId>menura-link</artifactId>

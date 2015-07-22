@@ -18,14 +18,9 @@
         <dagger.version>1.2.2</dagger.version>
     </properties>
     
-    <organization>
-    	<name>Innoave.com</name>
-    	<url>http://www.innoave.com</url>
-    </organization>
-    
     <scm>
 		<url>https://github.com/innoave/menura-link</url>
-		<connection>scm:git:ssh://github.com/innoave/menura-link.git</connection>
+		<connection>scm:git:git://github.com/innoave/menura-link.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/innoave/menura-link.git</developerConnection>
     </scm>
 	
@@ -33,6 +28,19 @@
 		<system>Github Issues</system>
 		<url>https://github.com/innoave/menura-link/issues</url>
 	</issueManagement>
+	
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+    
+    <organization>
+    	<name>Innoave.com</name>
+    	<url>http://www.innoave.com</url>
+    </organization>
 	
 	<dependencyManagement>
 		<dependencies>
