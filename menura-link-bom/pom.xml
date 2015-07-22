@@ -1,0 +1,59 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.innoave.menura.link</groupId>
+	<artifactId>menura-link-bom</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	
+	<name>Menura Link BOM</name>
+	<inceptionYear>2014</inceptionYear>
+	<url>https://github.com/innoave/menura-link</url>
+    
+    <organization>
+    	<name>Innoave.com</name>
+    	<url>http://www.innoave.com</url>
+    </organization>
+	
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	
+	<properties>
+		<menura.link.api.version>0.1.0-SNAPSHOT</menura.link.api.version>
+		<menura.link.core.version>0.1.0-SNAPSHOT</menura.link.core.version>
+		<menura.link.cli.version>0.1.0-SNAPSHOT</menura.link.cli.version>
+		<menura.link.jms.version>0.1.0-SNAPSHOT</menura.link.jms.version>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.innoave.menura.link</groupId>
+				<artifactId>menura-link-api</artifactId>
+				<version>${menura.link.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.innoave.menura.link</groupId>
+				<artifactId>menura-link-core</artifactId>
+				<version>${menura.link.core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.innoave.menura.link</groupId>
+				<artifactId>menura-link-cli</artifactId>
+				<version>${menura.link.cli.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.innoave.menura.link</groupId>
+				<artifactId>menura-link-jms</artifactId>
+				<version>${menura.link.jms.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+</project>
