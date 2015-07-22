@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: AssertingMessageHeaderHandler.java 9875 2014-11-24 11:51:53Z maida $
  *
- * Copyright (c) 2014 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: AssertingMessageHeaderHandler.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

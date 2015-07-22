@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: JmsConfigKey.java,v 1.0 18.02.2015 11:44:57 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: JmsConfigKey.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

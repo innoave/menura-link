@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: LinkMessageHandler.java 9291 2014-10-09 16:25:41Z maida $
  *
- * Copyright (c) 2014 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: LinkMessageHandler.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

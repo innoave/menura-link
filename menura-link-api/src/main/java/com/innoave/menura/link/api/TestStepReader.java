@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: TestStepReader.java,v 1.0 20.02.2015 15:52:18 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: TestStepReader.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: LoggerFactory.java,v 1.0 26.02.2015 13:49:17 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: LoggerFactory.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

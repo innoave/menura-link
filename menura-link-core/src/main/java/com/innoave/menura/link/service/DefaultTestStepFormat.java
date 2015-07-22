@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: TestCaseFormat.java 9275 2014-10-09 13:04:20Z maida $
  *
- * Copyright (c) 2014 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: TestCaseFormat.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

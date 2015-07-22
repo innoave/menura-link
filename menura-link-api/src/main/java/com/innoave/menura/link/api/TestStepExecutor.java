@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: TestStepExecutor.java,v 1.0 20.02.2015 16:47:23 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: TestStepExecutor.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

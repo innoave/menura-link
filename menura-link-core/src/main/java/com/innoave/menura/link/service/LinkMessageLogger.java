@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: LinkMessageLogger.java,v 1.0 26.02.2015 11:58:40 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: LinkMessageLogger.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

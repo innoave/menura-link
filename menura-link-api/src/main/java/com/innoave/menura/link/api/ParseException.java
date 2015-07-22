@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: ParseException.java,v 1.0 19.02.2015 10:49:48 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: ParseException.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

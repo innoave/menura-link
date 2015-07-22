@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: DefaultNamingStrategie.java,v 1.0 24.02.2015 15:16:47 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: DefaultNamingStrategie.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

@@ -1,7 +1,7 @@
 /**
  * @(#) $Id: CliParamsTest.java,v 1.0 23.02.2015 09:25:05 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
  * Changes:

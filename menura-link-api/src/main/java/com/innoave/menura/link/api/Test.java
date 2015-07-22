@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: Test.java,v 1.0 25.02.2015 12:53:26 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: Test.java,v $
  * Revision 1.0  2011/10/03  haraldmaida

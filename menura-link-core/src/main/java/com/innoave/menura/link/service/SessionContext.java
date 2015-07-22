@@ -1,10 +1,10 @@
 /**
  * @(#) $Id: SessionContext.java,v 1.0 07.07.2015 10:05:54 haraldmaida $
  *
- * Copyright (c) 2015 Versicherungsanstalt Oeffentlich Bediensteter
+ * Copyright (c) 2014-2015 Innoave.com
  * 
  *
- * Aenderungshistorie:
+ * Changes:
  *
  * $Log: SessionContext.java,v $
  * Revision 1.0  2011/10/03  haraldmaida
