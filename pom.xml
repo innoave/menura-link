@@ -21,7 +21,7 @@
 		<module>menura-link-api</module>
 		<module>menura-link-core</module>
 		<module>menura-link-jms</module>
-		<module>menura-link</module>
+		<module>menura-link-cli</module>
 	</modules>
 	
 	<dependencyManagement>

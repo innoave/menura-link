@@ -22,8 +22,8 @@ import java.util.jar.Manifest;
 
 import org.junit.Test;
 
-import com.innoave.menura.link.AppManifest;
-import com.innoave.menura.link.Main;
+import com.innoave.menura.link.cli.AppManifest;
+import com.innoave.menura.link.cli.Main;
 
 /**
  *

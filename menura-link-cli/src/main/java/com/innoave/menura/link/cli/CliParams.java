@@ -11,7 +11,7 @@
  * none
  *
  */
-package com.innoave.menura.link;
+package com.innoave.menura.link.cli;
 
 import org.kohsuke.args4j.Option;
 import org.kohsuke.args4j.spi.StringArrayOptionHandler;

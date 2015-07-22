@@ -11,7 +11,7 @@
  * none
  *
  */
-package com.innoave.menura.link;
+package com.innoave.menura.link.cli;
 
 import java.io.File;
 import java.io.IOException;

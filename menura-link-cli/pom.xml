@@ -8,7 +8,7 @@
 		<version>0.1.0-SNAPSHOT</version>
 	</parent>
   
-	<artifactId>menura-link</artifactId>
+	<artifactId>menura-link-cli</artifactId>
 	<name>Menura Link CLI</name>
   
 	<dependencies>
@@ -48,7 +48,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>./lib/</classpathPrefix>
-							<mainClass>com.innoave.menura.link.Main</mainClass>
+							<mainClass>com.innoave.menura.link.cli.Main</mainClass>
 						</manifest>
 						<manifestEntries>
 							<Implementation-Version>${project.version}</Implementation-Version>

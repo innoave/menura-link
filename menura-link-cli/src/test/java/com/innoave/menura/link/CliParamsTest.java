@@ -22,7 +22,7 @@ import org.junit.Test;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 
-import com.innoave.menura.link.CliParams;
+import com.innoave.menura.link.cli.CliParams;
 
 /**
  *
