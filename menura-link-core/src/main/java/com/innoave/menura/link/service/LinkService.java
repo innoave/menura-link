@@ -39,9 +39,7 @@ import com.innoave.menura.link.api.TestStepExecutor;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class LinkService {

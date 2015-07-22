@@ -45,9 +45,7 @@ import com.innoave.menura.link.service.SessionContext;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 @Test(FunctionalType.VERIFICATION)

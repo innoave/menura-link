@@ -33,9 +33,7 @@ import com.innoave.menura.link.service.LinkService;
 /**
  *
  *
- * @version $Revision: 11840 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class Main {

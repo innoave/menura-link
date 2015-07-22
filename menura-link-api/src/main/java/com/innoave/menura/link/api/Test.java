@@ -25,9 +25,7 @@ import java.lang.annotation.Target;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 @Documented

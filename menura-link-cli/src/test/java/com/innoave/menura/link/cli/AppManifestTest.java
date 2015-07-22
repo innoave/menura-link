@@ -30,9 +30,7 @@ import com.innoave.menura.link.cli.Main;
 /**
  *
  *
- * @version $Revision: 11218 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class AppManifestTest {

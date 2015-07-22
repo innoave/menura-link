@@ -29,9 +29,7 @@ import com.innoave.menura.link.cli.CliParams;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class CliParamsTest {

@@ -21,9 +21,7 @@ import com.innoave.menura.link.api.NamingStrategie;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class DefaultNamingStrategie implements NamingStrategie {

@@ -18,9 +18,7 @@ package com.innoave.menura.link.assertion;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class AssertingHelper {

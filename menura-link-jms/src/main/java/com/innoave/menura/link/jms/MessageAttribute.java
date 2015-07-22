@@ -18,9 +18,7 @@ package com.innoave.menura.link.jms;
 /**
  *
  *
- * @version $Revision: 9314 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class MessageAttribute {

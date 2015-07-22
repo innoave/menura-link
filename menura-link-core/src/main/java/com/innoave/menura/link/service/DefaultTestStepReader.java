@@ -46,9 +46,7 @@ import com.innoave.menura.link.service.DefaultTestStepFormat.TestSetupParam;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class DefaultTestStepReader implements TestStepReader {

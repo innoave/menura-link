@@ -35,9 +35,7 @@ import com.innoave.menura.link.api.TestStep;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 @Test(FunctionalType.VERIFICATION)

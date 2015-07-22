@@ -37,9 +37,7 @@ import com.innoave.menura.link.jms.MessageAttribute;
 /**
  *
  *
- * @version $Revision: 10083 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class JmsMessageSenderTest {

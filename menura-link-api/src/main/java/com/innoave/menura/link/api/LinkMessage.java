@@ -18,9 +18,7 @@ package com.innoave.menura.link.api;
 /**
  *
  *
- * @version $Revision: 9275 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class LinkMessage {

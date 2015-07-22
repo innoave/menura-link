@@ -23,9 +23,7 @@ import com.innoave.menura.link.api.Configuration;
 /**
  *
  *
- * @version $Revision: 9314 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class LinkConfiguration implements Configuration {

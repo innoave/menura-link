@@ -18,9 +18,7 @@ package com.innoave.menura.link.api;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class AssertResult {

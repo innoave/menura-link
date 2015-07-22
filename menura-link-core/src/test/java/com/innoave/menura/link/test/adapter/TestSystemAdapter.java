@@ -23,9 +23,7 @@ import com.innoave.menura.link.api.SystemAdapter;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class TestSystemAdapter extends AbstractLinkComponent

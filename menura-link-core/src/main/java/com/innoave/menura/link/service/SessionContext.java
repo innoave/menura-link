@@ -24,9 +24,7 @@ import org.slf4j.LoggerFactory;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class SessionContext {

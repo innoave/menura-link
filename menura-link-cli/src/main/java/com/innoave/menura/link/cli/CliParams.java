@@ -21,9 +21,7 @@ import org.kohsuke.args4j.spi.StringArrayOptionHandler;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class CliParams {

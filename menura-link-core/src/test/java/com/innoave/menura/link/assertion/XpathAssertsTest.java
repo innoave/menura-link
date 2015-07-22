@@ -33,9 +33,7 @@ import org.xml.sax.SAXException;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class XpathAssertsTest {

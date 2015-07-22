@@ -23,9 +23,7 @@ import java.io.Reader;
 /**
  *
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public interface TestStepReader {

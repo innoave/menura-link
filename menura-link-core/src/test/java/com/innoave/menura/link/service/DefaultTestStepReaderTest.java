@@ -32,9 +32,7 @@ import com.innoave.menura.link.test.handler.TestRequestHandler;
 /**
  *
  *
- * @version $Revision: 10083 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class DefaultTestStepReaderTest {

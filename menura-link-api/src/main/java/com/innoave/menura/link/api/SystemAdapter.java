@@ -20,9 +20,7 @@ package com.innoave.menura.link.api;
  * Adapter to the system under test (SUT).
  * </p>
  *
- * @version $Revision: 1.0 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public interface SystemAdapter extends LinkComponent {

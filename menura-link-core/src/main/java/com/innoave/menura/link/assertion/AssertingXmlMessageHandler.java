@@ -42,9 +42,7 @@ import com.innoave.menura.link.service.ObjectLoggerFactory;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 @Test(FunctionalType.VERIFICATION)

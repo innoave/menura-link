@@ -19,9 +19,7 @@ package com.innoave.menura.link.api;
 /**
  *
  *
- * @version $Revision: 9291 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public interface LinkMessageHandler extends LinkComponent {

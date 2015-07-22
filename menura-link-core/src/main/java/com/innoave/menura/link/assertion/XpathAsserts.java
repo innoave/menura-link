@@ -26,9 +26,7 @@ import org.w3c.dom.Document;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class XpathAsserts {

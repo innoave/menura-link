@@ -39,9 +39,7 @@ import com.innoave.menura.link.api.LinkMessageReceiver;
 /**
  *
  *
- * @version $Revision: 9314 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class JmsMessageReceiver extends AbstractLinkComponent

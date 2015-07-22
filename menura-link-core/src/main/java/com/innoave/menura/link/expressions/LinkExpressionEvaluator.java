@@ -30,9 +30,7 @@ import com.innoave.menura.link.assertion.ResultDescriptionBuilder;
 /**
  *
  *
- * @version $Revision: 9875 $
  * @author haraldmaida
- * @author $Author: maida $
  *
  */
 public class LinkExpressionEvaluator {
