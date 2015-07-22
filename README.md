@@ -1,8 +1,6 @@
-# menura-link
+# Menura Link
 
-Menura Link
-
-License
+## License
 
 
   Copyright (C) 2014-2015 Innoave.com
