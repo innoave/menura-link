@@ -1,0 +1,17 @@
+language: java
+
+install: mvn clean install --fail-never --quiet -DskipTests=true -Dinvoker.skip=true
+
+script: mvn clean verify
+
+after_success:
+  - .buildscript/deploy_snapshot.sh
+
+notifications:
+  email: true
+
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.m2
