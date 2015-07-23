@@ -1,3 +1,4 @@
+# Java
 *.class
 
 # Mobile Tools for Java (J2ME)
@@ -18,3 +19,10 @@ target
 .project
 .settings
 .classpath
+
+# Intellij
+*.iml
+*.ipr
+*.iws
+.idea
+*.eml
