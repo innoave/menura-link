@@ -28,7 +28,7 @@ public class TestAnnotationProcessor {
 		if (annotatedClazz == null) {
 			throw new IllegalArgumentException("AnnotatedClazz must not be null");
 		}
-		Test test = annotatedClazz.getAnnotation(Test.class);
+		final Test test = annotatedClazz.getAnnotation(Test.class);
 		if (test == null) {
 			return null;
 		}
