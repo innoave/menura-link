@@ -1,5 +1,9 @@
 language: java
 
+jdk:
+  - oraclejdk7
+  - openjdk6
+
 install: mvn clean install --fail-never --quiet -DskipTests=true -Dinvoker.skip=true
 
 script: mvn clean verify
