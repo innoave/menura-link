@@ -1,15 +1,17 @@
 /**
- * @(#) $Id: Main.java 11840 2015-04-03 13:57:51Z haraldmaida $
- *
- * Copyright (c) 2014-2015 Innoave.com
+ *  Copyright (c) 2014 Innoave.com
  * 
- *
- * Changes:
- *
- * $Log: Main.java,v $
- * Revision 1.0  2011/10/03  haraldmaida
- * none
- *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
  */
 package com.innoave.menura.link.cli;
 
@@ -31,9 +33,7 @@ import com.innoave.menura.link.service.LinkService;
 /**
  *
  *
- * @version $Revision: 11840 $
  * @author haraldmaida
- * @author $Author: haraldmaida $
  *
  */
 public class Main {
