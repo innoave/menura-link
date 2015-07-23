@@ -15,6 +15,7 @@ package com.innoave.menura.link.service;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -29,6 +30,11 @@ public class SessionContextTest {
 	
 	private SessionContext s1, s2, s3;
 	
+	
+	@Before
+	public void setUp() {
+		SessionContext.resetSessionIdCounter();
+	}
 	
 	@Test
 	public void testGetSesssionId_OneInstance() {

@@ -44,6 +44,10 @@ public class SessionContext {
 		}
 	};
 	
+	protected static void resetSessionIdCounter() {
+		sessionIdCounter.set(0);
+	}
+	
 	public static final SessionContext instance() {
 		return instance.get();
 	}
