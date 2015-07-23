@@ -29,6 +29,7 @@ import com.innoave.menura.link.api.LinkException;
 import com.innoave.menura.link.api.ParseException;
 import com.innoave.menura.link.api.TestStep;
 import com.innoave.menura.link.service.LinkService;
+import com.innoave.menura.link.service.SessionContext;
 
 /**
  *
@@ -74,10 +75,10 @@ public class Main {
 		final File linkPropsFile = new File("link.properties");
 		if (linkPropsFile.exists()) {
 			try {
-				log.debug("Lese Einstellungen von Datei: {}", linkPropsFile.getPath());
+				log.debug("Lese Einstellungen von Datei: {}", linkPropsFile.getAbsolutePath());
 				link.loadConfiguration(new File("link.properties"));
 			} catch (IOException e) {
-				log.warn("Fehler beim Lesen der {} Datei. Verwende Vorgabeeinstellungen!", linkPropsFile.getPath());
+				log.warn("Fehler beim Lesen der {} Datei. Verwende Vorgabeeinstellungen!", linkPropsFile.getAbsolutePath());
 				log.debug(e.getMessage(), e);
 			}
 		}
@@ -95,7 +96,8 @@ public class Main {
 				testStep = link.readTestStep(stepFile);
 				link.registerTestStep(DEFAULT_TEST_LIST, testStep);
 			}
-			link.executeRegisteredTestSteps(DEFAULT_TEST_LIST);
+			final SessionContext session = SessionContext.instance();
+			link.executeRegisteredTestSteps(DEFAULT_TEST_LIST, session);
 			
 			waitUntilInterrupted();
 

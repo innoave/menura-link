@@ -37,7 +37,7 @@ import com.innoave.menura.link.test.handler.TestRequestHandler;
  */
 public class DefaultTestStepReaderTest {
 	
-	static final String TEST_STEP_101 = "com/innoave/menura/link/service/TestStep101.lts";
+	static final String REQUEST_101 = "com/innoave/menura/link/service/Request101.lts";
 
 	private DefaultTestStepReader reader;
 	
@@ -49,34 +49,34 @@ public class DefaultTestStepReaderTest {
 	
 	
 	@Test
-	public void testReadTestStep_FromInputStream() throws Exception {
+	public void testReadTestStep_Request_FromInputStream() throws Exception {
 		final ClassLoader cl = Thread.currentThread().getContextClassLoader();
-		final InputStream in = cl.getResourceAsStream(TEST_STEP_101);
+		final InputStream in = cl.getResourceAsStream(REQUEST_101);
 		
 		TestStep testStep;
 		testStep = reader.readTestStep(in);
 		
-		assertEquals("Test Step 101", testStep.getName());
+		assertEquals("Request 101", testStep.getName());
 		assertEquals(FunctionalType.ACTION, testStep.getType());
 		assertEquals(TestSystemAdapter.class.getName(), testStep.getSystemAdapter().getName());
 		assertEquals(TestRequestHandler.class.getName(), testStep.getMessageHandler().getName());
 		
 		String vergleichsInhalt = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
-				+ "<testStep101>\n"
-					+ "<testStepDTO>\n"
+				+ "<request101>\n"
+					+ "<requestDTO>\n"
 						+ "<meldungsReferenz>ref.1234/10-1</meldungsReferenz>\n"
 						+ "<buchungsDatum>2014-09-22+02:00</buchungsDatum>\n"
 						+ "<belegDatum>2014-09-10+02:00</belegDatum>\n"
 						+ "<freigabeVon>Hrn. Hofrat</freigabeVon>\n"
 						+ "<bearbeitendeStelle>HST_WIEN</bearbeitendeStelle>\n"
-					+ "</testStepDTO>\n"
-				+ "</testStep101>\n";
+					+ "</requestDTO>\n"
+				+ "</request101>\n";
 		
 		LinkMessage linkMessage;
 		linkMessage = testStep.getMessage();
-		assertEquals("LAVA", linkMessage.getApplikation());
-		assertEquals("BW", linkMessage.getFunktion());
-		assertEquals("TestStep101", linkMessage.getAktion());
+		assertEquals("Menura", linkMessage.getApplikation());
+		assertEquals("Link", linkMessage.getFunktion());
+		assertEquals("Request101", linkMessage.getAktion());
 		assertEquals("wojhals879dkfj121", linkMessage.getCorrelationId());
 		assertEquals(vergleichsInhalt, linkMessage.getInhalt());
 	}

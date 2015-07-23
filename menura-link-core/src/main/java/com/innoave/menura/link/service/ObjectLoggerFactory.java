@@ -38,6 +38,9 @@ public class ObjectLoggerFactory {
 	
 
 	public static final <T> ObjectLogger<T> getObjectLogger(final Class<T> objectType) {
+		if (objectType == null) {
+			throw new IllegalArgumentException("ObjectTyp must not be null");
+		}
 		final Class<? extends ObjectLogger<?>> loggerClazz = objectLoggerTypeMap.get(objectType);
 		if (loggerClazz == null) {
 			throw new IllegalStateException("No ObjectLogger class for object type " + objectType.getName() + " found");

@@ -17,9 +17,7 @@ package com.innoave.menura.link.service;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  *
@@ -28,24 +26,48 @@ import org.slf4j.LoggerFactory;
  *
  */
 public class SessionContext {
-
-	private final Logger log = LoggerFactory.getLogger(getClass());
+	
+	private final String sessionId;
 	
 	private final Map<String, Object> attributes = new HashMap<String, Object>();
-
+	
+	private final Map<String, Integer> counters = new HashMap<String, Integer>();
+	
+	
+	private static final AtomicInteger sessionIdCounter = new AtomicInteger();
 	
 	private static final ThreadLocal<SessionContext> instance = new ThreadLocal<SessionContext>() {
 		@Override
 		protected SessionContext initialValue() {
-			return new SessionContext();
+			final int sessionId = sessionIdCounter.getAndIncrement();
+			return new SessionContext(String.valueOf(sessionId));
 		}
 	};
 	
 	public static final SessionContext instance() {
 		return instance.get();
 	}
+
+	private SessionContext(final String sessionId) {
+		this.sessionId = sessionId;
+	}
 	
-	private SessionContext() {
+	public String getSessionId() {
+		return sessionId;
+	}
+	
+	/**
+	 * Returns all attributes currently set in this context.
+	 * 
+	 * <p>The returned Map contains all attributes currently set in this context. Attributes
+	 * that are later put to this context or later removed from this context will not effect
+	 * the returned Map of attributes. Further any modification of the returned Map has no 
+	 * impact on the attributes defined in this context.
+	 * 
+	 * @return a Map of key/value pairs of all attributes currently set in this context.
+	 */
+	public Map<String, Object> getAllCurrentAttributes() {
+		return new HashMap<String, Object>(attributes);
 	}
 	
 	public Object getAttribute(final String name) {
@@ -54,6 +76,30 @@ public class SessionContext {
 	
 	public void putAttribute(final String name, final Object value) {
 		attributes.put(name, value);
+	}
+	
+	public void removeAttribute(final String name) {
+		attributes.remove(name);
+	}
+	
+	public int incrementCounter(final String name) {
+		Integer counter = counters.get(name);
+		if (counter == null) {
+			counter = 1;
+		} else {
+			counter++;
+		}
+		counters.put(name, counter);
+		return counter;
+	}
+	
+	public int getCounterValue(final String name) {
+		Integer counter = counters.get(name);
+		if (counter == null) {
+			counter = 0;
+			counters.put(name, counter);
+		}
+		return counter;
 	}
 	
 }

@@ -13,7 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.innoave.menura.link.api;
+package com.innoave.menura.link.service;
+
+import com.innoave.menura.link.api.LinkException;
 
 /**
  *
@@ -23,6 +25,6 @@ package com.innoave.menura.link.api;
  */
 public interface TestStepExecutor {
 
-	void execute() throws LinkException;
+	void execute(SessionContext context) throws LinkException;
 	
 }

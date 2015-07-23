@@ -50,7 +50,6 @@ public class LinkMessage {
 		this.correlationId = correlationId;
 		this.inhalt = inhalt;
 	}
-
 	
 	public String getApplikation() {
 		return applikation;

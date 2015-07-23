@@ -34,7 +34,6 @@ import com.innoave.menura.link.api.NamingStrategie;
 import com.innoave.menura.link.api.ParseException;
 import com.innoave.menura.link.api.SystemAdapter;
 import com.innoave.menura.link.api.TestStep;
-import com.innoave.menura.link.api.TestStepExecutor;
 
 /**
  *
@@ -65,7 +64,7 @@ public class LinkService {
 	}
 	
 	public TestStep readTestStep(final File file) throws IOException, ParseException {
-		log.debug("Lese TestStep {}", file.getPath());
+		log.debug("Lese TestStep {}", file.getAbsolutePath());
 		final DefaultTestStepReader testStepReader = new DefaultTestStepReader();
 		return testStepReader.readTestStep(file);
 	}
@@ -131,23 +130,24 @@ public class LinkService {
 		context.removeSystemAdapter(stepName);
 	}
 	
-	public void executeRegisteredTestSteps(final String testListName) throws LinkException {
+	public void executeRegisteredTestSteps(final String testListName, final SessionContext session) throws LinkException {
 		final Collection<TestStep> testStepList = context.getTestStepList(testListName);
-		executeTestSteps(testStepList);
+		executeTestSteps(session, testStepList);
 	}
 	
-	public void executeTestSteps(final TestStep... testSteps) throws LinkException {
+	public void executeTestSteps(final SessionContext session, final TestStep... testSteps) throws LinkException {
 		for (final TestStep testStep : testSteps) {
-			executeTestStep(testStep);
-		}
-	}	
-	public void executeTestSteps(final Collection<TestStep> testStepList) throws LinkException {
-		for (final TestStep testStep : testStepList) {
-			executeTestStep(testStep);
+			executeTestStep(testStep, session);
 		}
 	}
 	
-	public void executeTestStep(final TestStep testStep) throws LinkException {
+	public void executeTestSteps(final SessionContext session, final Collection<TestStep> testStepList) throws LinkException {
+		for (final TestStep testStep : testStepList) {
+			executeTestStep(testStep, session);
+		}
+	}
+	
+	public void executeTestStep(final TestStep testStep, final SessionContext session) throws LinkException {
 		//Create test step executor
 		final String stepName = testStep.getName();
 		final FunctionalType type = testStep.getType();
@@ -162,7 +162,6 @@ public class LinkService {
 			break;
 		case VERIFICATION:
 			//Verification Step is not executed proactively
-//			handler = context.getVerificationHandler(stepName);
 			break;
 		case NAVIGATION:
 			handler = context.getNavigationHandler(stepName);
@@ -177,7 +176,7 @@ public class LinkService {
 			final TestStepExecutor stepExecutor = new DefaultTestStepExecutor(
 					stepName, message, handler, systemAdapter);
 			//Do it!
-			stepExecutor.execute();
+			stepExecutor.execute(session);
 		}
 	}
 	

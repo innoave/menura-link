@@ -1,20 +1,20 @@
 ---TEST-SETUP---
-test.step.name=Test Step 101
+test.step.name=Request 101
 message.handler=com.innoave.menura.link.test.handler.TestRequestHandler
 system.adapter=com.innoave.menura.link.test.adapter.TestSystemAdapter
 ---MESSAGE-HEADER---
-applikation=LAVA
-funktion=BW
-aktion=TestStep101
+applikation=Menura
+funktion=Link
+aktion=Request101
 correlationId=wojhals879dkfj121
 ---MESSAGE-BODY---
 <?xml version="1.0" encoding="UTF-8" ?>
-<testStep101> 
-   <testStepDTO>
+<request101> 
+   <requestDTO>
       <meldungsReferenz>ref.1234/10-1</meldungsReferenz>
       <buchungsDatum>2014-09-22+02:00</buchungsDatum>
       <belegDatum>2014-09-10+02:00</belegDatum>
       <freigabeVon>Hrn. Hofrat</freigabeVon>
       <bearbeitendeStelle>HST_WIEN</bearbeitendeStelle>
-   </testStepDTO>
-</testStep101>
+   </requestDTO>
+</request101>

@@ -15,10 +15,12 @@
  */
 package com.innoave.menura.link.service;
 
+import java.util.Map;
+
 import com.innoave.menura.link.api.LinkMessage;
 import com.innoave.menura.link.api.LinkMessageHandler;
 import com.innoave.menura.link.api.SystemAdapter;
-import com.innoave.menura.link.api.TestStepExecutor;
+import com.innoave.menura.link.expressions.LinkExpressionRenderer;
 
 /**
  *
@@ -66,8 +68,15 @@ public class DefaultTestStepExecutor implements TestStepExecutor {
 	}
 	
 	@Override
-	public void execute() {
-		messageHandler.handleMessage(message);
+	public void execute(final SessionContext context) {
+		final LinkExpressionRenderer expressionRenderer = new LinkExpressionRenderer();
+		final Map<String, Object> attributes = context.getAllCurrentAttributes();
+		final String preparedContent = expressionRenderer.render(
+				message.getInhalt(), attributes);
+		final LinkMessage preparedMessage = new LinkMessage(
+				message.getApplikation(), message.getFunktion(), message.getAktion(),
+				message.getCorrelationId(), preparedContent);
+		messageHandler.handleMessage(preparedMessage);
 	}
 	
 }
