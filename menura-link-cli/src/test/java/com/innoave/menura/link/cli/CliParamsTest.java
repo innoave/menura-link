@@ -20,6 +20,7 @@ import static org.junit.Assert.*;
 import java.io.StringWriter;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
@@ -33,11 +34,18 @@ import com.innoave.menura.link.cli.CliParams;
  *
  */
 public class CliParamsTest {
+	
+	private static String nl;
 
 	private CliParams cliParams;
 	
 	private CmdLineParser cmdLineParser;
 	
+	
+	@BeforeClass
+	public static void setupOnce() {
+		nl = System.getProperty("line.separator");
+	}
 	
 	@Before
 	public void setUp() {
@@ -52,7 +60,7 @@ public class CliParamsTest {
 		
 		cmdLineParser.printUsage(sw, null);
 		
-		assertEquals(" -steps STEPFILE : Ein oder mehrere TestStep-Dateien\r\n", sw.toString());
+		assertEquals(" -steps STEPFILE : Ein oder mehrere TestStep-Dateien" + nl, sw.toString());
 	}
 	
 	@Test

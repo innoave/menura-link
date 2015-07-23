@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -31,14 +32,18 @@ import org.junit.Test;
  */
 public class LinkExpressionRendererTest {
 
-	private String nl;
+	private static String nl;
 	
 	private LinkExpressionRenderer renderer;
 	
 	
+	@BeforeClass
+	public static void setupOnce() {
+		nl = System.getProperty("line.separator");
+	}
+	
 	@Before
 	public void setUp() {
-		nl = System.getProperty("line.separator");
 		renderer = new LinkExpressionRenderer();
 	}
 	
