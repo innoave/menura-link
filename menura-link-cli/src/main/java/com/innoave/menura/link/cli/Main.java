@@ -28,6 +28,7 @@ import org.slf4j.LoggerFactory;
 import com.innoave.menura.link.api.LinkException;
 import com.innoave.menura.link.api.ParseException;
 import com.innoave.menura.link.api.TestStep;
+import com.innoave.menura.link.service.FileUtil;
 import com.innoave.menura.link.service.LinkService;
 import com.innoave.menura.link.service.SessionContext;
 
@@ -57,7 +58,7 @@ public class Main {
 		}
 	}
 	
-	private void go(final String[] args) {
+	protected void go(final String[] args) {
 		log.info("----------------------------------------");
 		log.info("=== Menura Link Version {} ===", AppManifest.getVersion(Main.class));
 		log.info("----------------------------------------");
@@ -72,15 +73,18 @@ public class Main {
 		log.debug("----------------------------------------");
 		final LinkService link = new LinkService();
 		log.debug("Pruefe ob link.properties existiert");
-		final File linkPropsFile = new File("link.properties");
-		if (linkPropsFile.exists()) {
+		//assume link.properties file in current working directory
+		final File linkPropsFile = FileUtil.searchFileOnClassPath("link.properties");
+		if (linkPropsFile != null) {
 			try {
 				log.debug("Lese Einstellungen von Datei: {}", linkPropsFile.getAbsolutePath());
-				link.loadConfiguration(new File("link.properties"));
+				link.loadConfiguration(linkPropsFile);
 			} catch (IOException e) {
 				log.warn("Fehler beim Lesen der {} Datei. Verwende Vorgabeeinstellungen!", linkPropsFile.getAbsolutePath());
 				log.debug(e.getMessage(), e);
 			}
+		} else {
+			log.warn("Keine link.properties in class path gefunden. Verwende Vorgabeeinstellungen!");
 		}
 		try {
 			//Parse command line options
@@ -97,9 +101,7 @@ public class Main {
 				link.registerTestStep(DEFAULT_TEST_LIST, testStep);
 			}
 			final SessionContext session = SessionContext.instance();
-			link.executeRegisteredTestSteps(DEFAULT_TEST_LIST, session);
-			
-			waitUntilInterrupted();
+			link.startExecutionOfRegisteredTestSteps(DEFAULT_TEST_LIST, session);
 
 			link.shutdown();
 		} catch (LinkException e) {

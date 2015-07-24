@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2014 Innoave.com
+ *  Copyright (c) 2015 Innoave.com
  * 
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -15,20 +15,24 @@
  */
 package com.innoave.menura.link.api;
 
+import java.util.concurrent.TimeUnit;
+
 /**
- * <p>
- * Adapter to the system under test (SUT).
- * </p>
+ *
  *
  * @author haraldmaida
  *
  */
-public interface SystemAdapter extends LinkComponent {
-	
+public interface InternalMessageQueue {
+
 	void startup(Configuration configuration) throws LinkException;
 	
 	void shutdown() throws LinkException;
 	
-	InternalMessageQueue getInternalMessageQueue();
+	void put(LinkMessage message) throws InterruptedException;
+	
+	LinkMessage take() throws InterruptedException;
+	
+	LinkMessage poll(final long timeout, TimeUnit unit) throws InterruptedException;
 	
 }

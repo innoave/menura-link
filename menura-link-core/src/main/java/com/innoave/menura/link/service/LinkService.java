@@ -130,54 +130,61 @@ public class LinkService {
 		context.removeSystemAdapter(stepName);
 	}
 	
-	public void executeRegisteredTestSteps(final String testListName, final SessionContext session) throws LinkException {
+	public void startExecutionOfRegisteredTestSteps(final String testListName, final SessionContext session) throws LinkException {
 		final Collection<TestStep> testStepList = context.getTestStepList(testListName);
-		executeTestSteps(session, testStepList);
+		startExecutionOfTestSteps(session, testStepList);
 	}
 	
-	public void executeTestSteps(final SessionContext session, final TestStep... testSteps) throws LinkException {
+	public void startExecutionOfTestSteps(final SessionContext session, final TestStep... testSteps) throws LinkException {
 		for (final TestStep testStep : testSteps) {
-			executeTestStep(testStep, session);
+			startTestStepExecution(testStep, session);
 		}
 	}
 	
-	public void executeTestSteps(final SessionContext session, final Collection<TestStep> testStepList) throws LinkException {
+	public void startExecutionOfTestSteps(final SessionContext session, final Collection<TestStep> testStepList) throws LinkException {
 		for (final TestStep testStep : testStepList) {
-			executeTestStep(testStep, session);
+			startTestStepExecution(testStep, session);
 		}
 	}
 	
-	public void executeTestStep(final TestStep testStep, final SessionContext session) throws LinkException {
+	public void startTestStepExecution(final TestStep testStep, final SessionContext session) throws LinkException {
 		//Create test step executor
 		final String stepName = testStep.getName();
+		final SystemAdapter systemAdapter = context.getSystemAdapter(stepName);
+		final LinkMessage message = testStep.getMessage();
 		final FunctionalType type = testStep.getType();
 		if (type == null) {
 			throw new LinkException("Unknown functional type of test step");
 		}
-		LinkMessageHandler handler = null;
+		registerStepNameForTestStep(testStep);
+		final TestStepExecutor stepExecutor;
 		switch (type) {
-		case ACTION:
+		case ACTION: {
+			final LinkMessageHandler handler;
 			handler = context.getActionHandler(stepName);
-			registerStepNameForTestStep(testStep);
-			break;
-		case VERIFICATION:
-			//Verification Step is not executed proactively
-			break;
-		case NAVIGATION:
+			stepExecutor = new ActionTestStepExecutor(
+					stepName, message, handler, systemAdapter);
+			log.info("Starting with action test step '{}'", stepName);
+		} break;
+		case VERIFICATION: {
+			final LinkMessageHandler handler;
+			handler = context.getVerificationHandler(stepName);
+			stepExecutor = new VerificationTestStepExecutor(
+					stepName, message, handler, systemAdapter);
+			log.info("Starting with verification test step '{}'", stepName);
+		} break;
+		case NAVIGATION: {
+			final LinkMessageHandler handler;
 			handler = context.getNavigationHandler(stepName);
-			registerStepNameForTestStep(testStep);
-			break;
+			stepExecutor = new ActionTestStepExecutor(
+					stepName, message, handler, systemAdapter);
+			log.info("Starting with navigation test step '{}'", stepName);
+		} break;
 		default:
 			throw new LinkException("Unsupported functional type of test step");
 		}
-		if (handler != null) {
-			final SystemAdapter systemAdapter = context.getSystemAdapter(stepName);
-			final LinkMessage message = testStep.getMessage();
-			final TestStepExecutor stepExecutor = new DefaultTestStepExecutor(
-					stepName, message, handler, systemAdapter);
-			//Do it!
-			stepExecutor.execute(session);
-		}
+		//Do it!
+		stepExecutor.execute(session);
 	}
 	
 	protected void registerStepNameForTestStep(final TestStep testStep) {

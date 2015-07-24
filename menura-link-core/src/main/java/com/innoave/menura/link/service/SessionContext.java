@@ -27,13 +27,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class SessionContext {
 	
-	private final String sessionId;
-	
-	private final Map<String, Object> attributes = new HashMap<String, Object>();
-	
-	private final Map<String, Integer> counters = new HashMap<String, Integer>();
-	
-	
 	private static final AtomicInteger sessionIdCounter = new AtomicInteger();
 	
 	private static final ThreadLocal<SessionContext> instance = new ThreadLocal<SessionContext>() {
@@ -51,6 +44,14 @@ public class SessionContext {
 	public static final SessionContext instance() {
 		return instance.get();
 	}
+	
+	private final String sessionId;
+	
+	private final Map<String, Object> attributes = new HashMap<String, Object>();
+	
+	private final Map<String, Integer> counters = new HashMap<String, Integer>();
+	
+	private Long internalMessageTimeout = Long.valueOf(CoreConfigKey.INTERNAL_MESSAGE_TIMEOUT.getDefaultValue());
 
 	private SessionContext(final String sessionId) {
 		this.sessionId = sessionId;
@@ -104,6 +105,10 @@ public class SessionContext {
 			counters.put(name, counter);
 		}
 		return counter;
+	}
+	
+	public Long getInternalMessageTimeout() {
+		return internalMessageTimeout;
 	}
 	
 }

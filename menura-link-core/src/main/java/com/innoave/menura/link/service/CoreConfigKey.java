@@ -1,5 +1,5 @@
 /**
- *  Copyright (c) 2014 Innoave.com
+ *  Copyright (c) 2015 Innoave.com
  * 
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -13,13 +13,9 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package com.innoave.menura.link.test.adapter;
+package com.innoave.menura.link.service;
 
-import com.innoave.menura.link.api.AbstractLinkComponent;
 import com.innoave.menura.link.api.Configuration;
-import com.innoave.menura.link.api.InternalMessageQueue;
-import com.innoave.menura.link.api.LinkException;
-import com.innoave.menura.link.api.SystemAdapter;
 
 /**
  *
@@ -27,21 +23,31 @@ import com.innoave.menura.link.api.SystemAdapter;
  * @author haraldmaida
  *
  */
-public class TestSystemAdapter extends AbstractLinkComponent
-		implements SystemAdapter {
-	
-	
-	@Override
-	public void startup(Configuration configuration) throws LinkException {
-	}
-	
-	@Override
-	public void shutdown() throws LinkException {
-	}
-	
-	@Override
-	public InternalMessageQueue getInternalMessageQueue() {
-		return null;
-	}
+public enum CoreConfigKey implements Configuration.Key {
 
+	INTERNAL_MESSAGE_QUEUE_CAPACITY ("core.internal.message.queue.capacity", "150"),
+	INTERNAL_MESSAGE_TIMEOUT ("core.internal.message.timeout", "60");
+	
+	
+	private final String propertyKey;
+	private final String defaultValue;
+	
+	CoreConfigKey(
+			final String propertyKey,
+			final String defaultValue
+			) {
+		this.propertyKey = propertyKey;
+		this.defaultValue = defaultValue;
+	}
+	
+	@Override
+	public String getPropertyKey() {
+		return propertyKey;
+	}
+	
+	@Override
+	public String getDefaultValue() {
+		return defaultValue;
+	}
+	
 }

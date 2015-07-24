@@ -31,9 +31,9 @@ import org.slf4j.LoggerFactory;
 
 import com.innoave.menura.link.api.AbstractLinkComponent;
 import com.innoave.menura.link.api.Configuration;
+import com.innoave.menura.link.api.InternalMessageQueue;
 import com.innoave.menura.link.api.LinkException;
 import com.innoave.menura.link.api.LinkMessage;
-import com.innoave.menura.link.api.LinkMessageHandler;
 import com.innoave.menura.link.api.LinkMessageReceiver;
 
 /**
@@ -55,7 +55,7 @@ public class JmsMessageReceiver extends AbstractLinkComponent
 	
 	private String responseQueuePassword;
 	
-	private LinkMessageHandler messageHandler; 
+	private InternalMessageQueue internalMessageQueue; 
 	
 	private QueueSession queueSession;
 	private QueueReceiver queueReceiver;
@@ -67,20 +67,20 @@ public class JmsMessageReceiver extends AbstractLinkComponent
 	
 	public JmsMessageReceiver(
 			final QueueConnectionFactory queueConnectionFactory,
-			final LinkMessageHandler messageHandler
+			final InternalMessageQueue internalMessageQueue
 			) {
 		this.queueConnectionFactory = queueConnectionFactory;
-		this.messageHandler = messageHandler;
+		this.internalMessageQueue = internalMessageQueue;
 	}
 	
 	public JmsMessageReceiver(
 			final QueueConnectionFactory queueConnectionFactory,
 			final String responseQueueName,
-			final LinkMessageHandler messageHandler
+			final InternalMessageQueue internalMessageQueue
 			) {
 		this.queueConnectionFactory = queueConnectionFactory;		
 		this.responseQueueName = responseQueueName;
-		this.messageHandler = messageHandler;
+		this.internalMessageQueue = internalMessageQueue;
 	}
 	
 	public JmsMessageReceiver(
@@ -88,13 +88,13 @@ public class JmsMessageReceiver extends AbstractLinkComponent
 			final String responseQueueName,
 			final String responseQueueUsername,
 			final String responseQueuePassword,
-			final LinkMessageHandler messageHandler
+			final InternalMessageQueue internalMessageQueue
 			) {
 		this.queueConnectionFactory = queueConnectionFactory;		
 		this.responseQueueName = responseQueueName;
 		this.responseQueueUsername = responseQueueUsername;
 		this.responseQueuePassword = responseQueuePassword;
-		this.messageHandler = messageHandler;
+		this.internalMessageQueue = internalMessageQueue;
 	}
 
 	public QueueConnectionFactory getQueueConnectionFactory() {
@@ -222,10 +222,11 @@ public class JmsMessageReceiver extends AbstractLinkComponent
 					);
 			log.debug("  text={}", text);
 			final LinkMessage linkMsg = new LinkMessage(application, function, action, correlationId, text);
-			log.info("Behandle LinkMessage durch {}...", messageHandler.getName());
-			messageHandler.handleMessage(linkMsg);
+			internalMessageQueue.put(linkMsg);
 		} catch (JMSException e) {
 			log.error("Fehler beim Lesen der empfangenen JMS-Message", e);
+		} catch (InterruptedException e) {
+			log.error("Can not put received LinkMessage into internal message queue", e);
 		}
 	}
 	

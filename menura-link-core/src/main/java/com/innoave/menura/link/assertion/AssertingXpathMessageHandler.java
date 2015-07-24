@@ -131,19 +131,23 @@ public class AssertingXpathMessageHandler extends AbstractLinkComponent
 			log.error("Kann Inhalt von Antwort-Meldung nicht in DOM laden. Inhalt: {}", actual.getInhalt());
 			return;
 		}
+		log.info("Erwarteter Inhalt: {}", linkMessageLogger.buildLogMessage(expected));
 		for (final String xpath : expectedExpr.stringPropertyNames()) {
 			final String expression = expectedExpr.getProperty(xpath);
 			final AssertResult result;
 			result = expressionEvaluator.evaluate(expression, xpath, actualDom);
-			final Object expectedValue = result.getExpectedValue();
-			final String attributeName = expectedValue == null ? null : String.valueOf(expectedValue);
-			context.putAttribute(attributeName, result.getActualValue());
-			logAssertResults(new AssertResult[] { result });
+			logAssertResults(result);
+			switch (result.getResultCode()) {
+			case ATTRIBUTE:
+				final Object expectedValue = result.getExpectedValue();
+				final String attributeName = expectedValue == null ? null : String.valueOf(expectedValue);
+				context.putAttribute(attributeName, result.getActualValue());
+				break;
+			}
 		}
-		log.info("Erwarteter Inhalt: {}", linkMessageLogger.buildLogMessage(expected));
 	}
 	
-	protected void logAssertResults(final AssertResult[] assertResults) {
+	protected void logAssertResults(final AssertResult... assertResults) {
 		for (final AssertResult result : assertResults) {
 			switch (result.getResultCode()) {
 			case OK:
