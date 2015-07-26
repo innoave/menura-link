@@ -25,6 +25,7 @@
   
 	<artifactId>menura-link-cli</artifactId>
 	<name>Menura Link CLI</name>
+	<description>Command line interface of Menura Link</description>
   
 	<dependencies>
 		<dependency>

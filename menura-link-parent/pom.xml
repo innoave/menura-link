@@ -23,6 +23,7 @@
 	<version>0.1.0-SNAPSHOT</version>
 	
 	<name>Menura Link Parent</name>
+	<description>Parent POM for the Menura Link Project</description>
 	<url>https://github.com/innoave/menura-link</url>
 	<inceptionYear>2014</inceptionYear>
 	

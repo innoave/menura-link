@@ -28,6 +28,8 @@
 	<packaging>pom</packaging>
 	
 	<name>Menura Link BOM</name>
+	<description>Dependency management for all moduls of Menura Link.
+		Import this BOM into maven projects that implement system specific extensions.</description>
 	<url>https://github.com/innoave/menura-link</url>
     
     <scm>
