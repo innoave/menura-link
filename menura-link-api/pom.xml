@@ -25,5 +25,8 @@
 	
 	<artifactId>menura-link-api</artifactId>
 	<name>Menura Link API</name>
+	<description>The API of Menura Link to be used writing system adapters or
+		other extensions for the framework.
+		Menura Link provides default implementations for this API.</description>
 	
 </project>

@@ -25,6 +25,7 @@
 	
 	<artifactId>menura-link-jms</artifactId>
 	<name>Menura Link JMS</name>
+	<description>JMS transport layer for Menura Link</description>
   
 	<dependencies>
 		<dependency>

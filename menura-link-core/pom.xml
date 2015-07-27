@@ -25,6 +25,7 @@
 	
 	<artifactId>menura-link-core</artifactId>
 	<name>Menura Link Core</name>
+	<description>The core of Menura Link</description>
 	  
 	<dependencies>
 		<dependency>
