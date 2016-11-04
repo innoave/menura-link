@@ -2,6 +2,9 @@
 
 Framework for testing message based services.
 
+## This project is retired!
+
+After some time of development and usage of menura-link we found the great [Citrus Integration Testing framework](http://www.citrusframework.org/). This project has the same idea as menura-link but started much earlier, is much more mature and supports all scenarios, protocols and features we can think of.
 
 ## License
 
